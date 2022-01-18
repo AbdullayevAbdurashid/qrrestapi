@@ -57,7 +57,7 @@ main().catch((err) => console.log(err));
 
 async function main() {
   await mongoose.connect(
-    "mongodb+srv://Abdurashid:Abdurashid@cluster0.zgtwg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority "
+    "mongodb+srv://Abdurashid:Abdurashid@cluster0.zgtwg.mongodb.net/Project0?retryWrites=true&w=majority "
   );
 }
 
