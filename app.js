@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
   },
 });
 mongoose.pluralize(null);
-
+const PORT = process.env.PORT || 4000;
 const { Schema } = mongoose;
 const upload = multer({ storage });
 
@@ -538,6 +538,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(4000, () => {
-  console.log("localhost is running on port 4000");
+server.listen(PORT, () => {
+  console.log("SERVER is running on port " + PORT);
 });
