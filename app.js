@@ -48,15 +48,7 @@ app.use(
     extended: true,
   })
 );
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept-Type"
-  );
-  res.header("Access-Control-Allow-Credentials", "true");
-  next();
-});
+
 app.use("/uploads", express.static("uploads"));
 app.use(bodyParser.json());
 
@@ -64,7 +56,9 @@ app.use(cors());
 main().catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect("mongodb://localhost:27017/restaurantDB");
+  await mongoose.connect(
+    "mongodb+srv://Abdurashid:Abdurashid@cluster0.zgtwg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority "
+  );
 }
 
 function updateAllData() {
